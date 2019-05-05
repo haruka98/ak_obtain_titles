@@ -20,6 +20,12 @@ int main(int argc, char* argv[]) {
 	printf("Enter account id:\n");
 	fflush(stdin);
 	scanf("%lld", &account_id);
+	printf("Do you want to delete all your existing titles? (y/N)\n");
+	fflush(stdin);
+	scanf("%c", &tempc);
+	if(tempc == 'y' || tempc == 'Y') {
+		fprintf(fp, "DELETE FROM player_appellation WHERE account_id='%lld';\n", account_id);
+	}
 	printf("Enter highest title id: (ex. 1975)\n");
 	fflush(stdin);
 	scanf("%ld", &title_id);
